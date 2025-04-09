@@ -7,3 +7,20 @@ function updateDisplay(){
         alert("Haz alcanzado 10 clicks");
     }
 }
+
+function incrementCount(){
+    previousCounts.push(count);
+    count++;
+    updateDisplay();
+}
+
+function resetCount() {
+    previousCounts.push(count);
+    count = 0;
+    updateDisplay();
+}
+
+
+//Eventos de los Botones
+document.getElementById('clickButton').addEventListener('click',incrementCount);
+document.getElementById('resetButton').addEventListener('click',resetCount);
