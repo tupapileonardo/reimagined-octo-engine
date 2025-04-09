@@ -20,7 +20,14 @@ function resetCount() {
     updateDisplay();
 }
 
+function undoLastClick() {
+    if (previousCounts.length > 0) {
+        count = previousCounts.pop(); // Recuperar el último estado
+        updateDisplay();
+    }
+}
 
-//Eventos de los Botones
-document.getElementById('clickButton').addEventListener('click',incrementCount);
-document.getElementById('resetButton').addEventListener('click',resetCount);
+// Asignar eventos a los botones
+document.getElementById('clickButton').addEventListener('click', incrementCount);
+document.getElementById('resetButton').addEventListener('click', resetCount);
+document.getElementById('undoButton').addEventListener('click', undoLastClick);
